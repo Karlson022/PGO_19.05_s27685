@@ -11,6 +11,7 @@ public class Student {
     protected static int count;
     protected String indexNumber;
     protected int currentSemester;
+    protected int maxStudentSemester;
     protected String studentStudyProgramme;
     protected int numberOfItn;
     protected int maxStudentItn;
@@ -23,13 +24,15 @@ public class Student {
         this.address = studentAddress;
         this.phoneNumber = studentPhoneNumber;
         this.birthDate = studentBirthDate;
-        this.studentStatus = "candidate";
+        this.studentStatus = "Candidate";
         count++;
         this.indexNumber = "s" + count;
     }
 
     public void enrollStudent(StudyProgramme studyProgramme){
         this.currentSemester = 1;
+        this.studentStatus = "Student";
+        this.maxStudentSemester = studyProgramme.numberOfSemesters;
         this.studentStudyProgramme = studyProgramme.getProgrammeName();
         this.maxStudentItn = studyProgramme.maxItn;
     }
@@ -109,6 +112,23 @@ public class Student {
     public void setNumberOfItn(int numberOfItn) {
         this.numberOfItn = numberOfItn;
     }
+
+    public String getStudentStatus() {
+        return studentStatus;
+    }
+
+    public void setStudentStatus(String studentStatus) {
+        this.studentStatus = studentStatus;
+    }
+
+    public int getMaxStudentSemester() {
+        return maxStudentSemester;
+    }
+
+    public void setMaxStudentSemester(int maxStudentSemester) {
+        this.maxStudentSemester = maxStudentSemester;
+    }
+    
    
     
 }

@@ -29,6 +29,12 @@ public class Students{
                 throw new Exception("Max number of ITN's is exceeded");
             }else{
                 student.currentSemester++;
+                if(student.getCurrentSemester() == student.getMaxStudentSemester()){
+                    student.setStudentStatus("Graduate");
+                    System.out.println("Congrats you graduated from PJATK University");
+                }else{
+                    continue;
+                }
             }
         }
     }  
