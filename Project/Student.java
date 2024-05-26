@@ -2,15 +2,20 @@ import java.util.Date;
 
 public class Student {
 
-    private String name;
-    private String surname;
-    private String email;
-    private String address;
-    private String phoneNumber;
-    private Date birthDate;
-    private static int count;
-    private String indexNumber;
-    
+    protected String name;
+    protected String surname;
+    protected String email;
+    protected String address;
+    protected String phoneNumber;
+    protected Date birthDate;
+    protected static int count;
+    protected String indexNumber;
+    protected int currentSemester;
+    protected String studentStudyProgramme;
+    protected int numberOfItn;
+    protected int maxStudentItn;
+    protected String studentStatus;
+
     public Student(String studentName, String studentSurname, String studentEmail, String studentAddress, String studentPhoneNumber, Date studentBirthDate) {
         this.name = studentName;
         this.surname = studentSurname;
@@ -18,8 +23,15 @@ public class Student {
         this.address = studentAddress;
         this.phoneNumber = studentPhoneNumber;
         this.birthDate = studentBirthDate;
+        this.studentStatus = "candidate";
         count++;
         this.indexNumber = "s" + count;
+    }
+
+    public void enrollStudent(StudyProgramme studyProgramme){
+        this.currentSemester = 1;
+        this.studentStudyProgramme = studyProgramme.getProgrammeName();
+        this.maxStudentItn = studyProgramme.maxItn;
     }
 
     public String getName() {
@@ -70,13 +82,33 @@ public class Student {
         this.birthDate = birthDate;
     }
 
-
     public String getIndexNumber() {
         return indexNumber;
     }
 
+    public int getCurrentSemester() {
+        return currentSemester;
+    }
 
-    
+    public void setCurrentSemester(int currentSemester) {
+        this.currentSemester = currentSemester;
+    }
 
+    public String getStudentStudyProgramme() {
+        return studentStudyProgramme;
+    }
+
+    public void setStudentStudyProgramme(StudyProgramme studentStudyProgramme) {
+        this.studentStudyProgramme = studentStudyProgramme.toString();
+    }
+
+    public int getNumberOfItn() {
+        return numberOfItn;
+    }
+
+    public void setNumberOfItn(int numberOfItn) {
+        this.numberOfItn = numberOfItn;
+    }
+   
     
 }
