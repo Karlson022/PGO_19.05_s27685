@@ -21,16 +21,14 @@ public class Main {
         Students.addStudent(s2);
         System.out.println(s.getCurrentSemester());
         System.out.println(s2.getCurrentSemester());
-        //System.out.println(s2.getCurrentSemester());
         //We try to promote students - this method should go through all our students and run the promoteToNextSemester() method on each student.
         //Remember to check whether a student is not already on the last semester - then we can set student's status = "Graduate". 
         //Remember to check whether the student didn't exceed the number of ITN's allowed on specific studies.
         Students.promoteAllStudents();
         System.out.println(s.getCurrentSemester());
         System.out.println(s2.getCurrentSemester());
-        //System.out.println(s2.getCurrentSemester());
         //We check the current semester for each student
-        //Students.displayInfoAboutAllStudents();
+        Students.displayInfoAboutAllStudents();
 
     }
 }
