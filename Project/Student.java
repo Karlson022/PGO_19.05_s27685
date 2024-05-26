@@ -37,6 +37,19 @@ public class Student {
         this.maxStudentItn = studyProgramme.maxItn;
     }
 
+    public void promoteToNextSemester() throws Exception{
+            if(this.getNumberOfItn() > this.maxStudentItn){
+                throw new Exception("Max number of ITN's is exceeded");
+            }else{
+                this.currentSemester++;
+                if(this.getCurrentSemester() == this.getMaxStudentSemester()){
+                    this.setStudentStatus("Graduate");
+                    System.out.println("Congrats you graduated from PJATK University");
+                }
+            }
+        }
+
+
     public String getName() {
         return name;
     }
